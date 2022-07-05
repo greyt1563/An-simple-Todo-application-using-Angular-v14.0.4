@@ -1,0 +1,51 @@
+<!-- <ul *ngFor="let todo of todos">
+    <li>{{todo.sno}} - {{todo.title}} -  {{todo.desc}}</li>
+</ul> -->
+<!-- <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let expense of expenses">
+      <th scope="row">{{expense.sno}}</th>
+      <td>{{expense.title}}</td>
+      <td>{{expense.desc}}</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+    </tbody>
+  </table> -->
+
+  <h1>This is my First Angular Application</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolores
+    animi rem deleniti odio tempora rerum, nihil doloremque in quia accusantium,
+    perferendis alias ea beatae dolorem magni numquam dolore atque! Nesciunt
+    corrupti ullam nulla velit temporibus officia voluptatem hic commodi
+    architecto. Nemo nisi rem recusandae atque et doloremque, delectus, culpa
+    ut, aliquid sed expedita ipsam ipsa provident officiis fugiat quo. Placeat
+    ea officia temporibus veritatis ipsa a sint nesciunt error quos neque
+    eligendi similique adipisci ipsam, consectetur at deserunt sit tempora, sed
+    quasi laborum ullam! Sit repellendus mollitia voluptate quas.
+  </p>
+
+<app-add-expenses (expenseAdd)="addExpense($event)"></app-add-expenses>
+
+<h2 class="text-center">List of Expenses</h2>
+<div *ngIf="this.expenses.length > 0; else elseBlock">
+  <div *ngFor="let expense of expenses">
+    <app-expense-item [Expense]="expense" (expenseDelete)="deleteExpense($event)" ></app-expense-item>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <div class="alert alert-danger alert-dismissible fade show mb-5" role="alert">
+    A simple danger alert. Give it a click if you like.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</ng-template>
